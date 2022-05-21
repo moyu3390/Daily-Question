@@ -1,9 +1,13 @@
+const once = require('lodash/once')
+
 const sidebar = [
   {
     title: '打包篇',
+    collapsable: false, 
     children: [
       {
-        title: '第一章: Bundle 基础设施建设',
+        title: '第一章: 打包器的资源处理',
+        description: '以打包器的视角而言，一切皆是模块，那像 Rollup、Webpack 这样的构建工具，是如何将 Javascript、CSS、HTML 作为模块处理的呢？作为构建工具，如何提升构建速度呢？',
         children: [
           {
             title: '模块化方案',
@@ -59,6 +63,7 @@ const sidebar = [
       },
       {
         title: '第二章: 打包体积优化',
+        description: '在网站性能优化中，最重要的一条是首屏时间优化，而更少的资源，意味着更少的网络负载及更快的网站打开速度。',
         children: [
           {
             title: '打包体积分析',
@@ -87,6 +92,7 @@ const sidebar = [
       },
       {
         title: '第三章: Bundless 基础设施建设',
+        description: '随着浏览器对 ESM 的原生支持，Vite 如此的打包器也顺势而生，那 Bundless 有哪些优缺点与注意事项呢？',
         children: [
           {
             title: '原理与浏览器中的 ESM',
@@ -110,9 +116,11 @@ const sidebar = [
   },
   {
     title: '开发篇',
+    collapsable: false, 
     children: [
       {
         title: '第四章: npm package 开发',
+        description: '开发一个包，对于前端工程化可以得到一个很好的实践。',
         children: [
           {
             title: 'semver 与版本管理',
@@ -158,6 +166,7 @@ const sidebar = [
       },
       {
         title: '第五章: 包管理工具',
+        description: '从 npm，到 yarn，再到 pnpm，装包速度及装包体积都有了极大的提升，关于 npm 的诸多陷阱也得到了了解决，比如幽灵依赖与 npm scripts hook 较高的风险',
         children: [
           {
             title: 'npm cache',
@@ -179,9 +188,11 @@ const sidebar = [
   },
   {
     title: '运维篇',
+    collapsable: false, 
     children: [
       {
         title: '第五章: 前端质量保障',
+        description: '在前端质量保障工程中，在 Git Hooks、CI 中结合 Lint、Test、SizeLimit 等操作进行拦截，可以一定程度上保证项目代码质量',
         children: [
           {
             title: 'CICD',
@@ -212,6 +223,7 @@ const sidebar = [
       },
       {
         title: '第六章: 前端服务部署',
+        description: '随着前端工程化及 devops 的发展，前端部署也逐渐简单方便，比如通过构建后带有 hash 的文件可作持久缓存，代码分割又避免了一行代码的更改使整个网站资源的缓存都失效的问题。',
         children: [
           {
             title: 'Long Term Cache',
@@ -237,10 +249,10 @@ const sidebar = [
 ]
 
 function getItems () {
-  return sidebar.map(x => x.children.map(x => x.children)).flat(10)
+  return sidebar.map(x => x.children?.map(x => x.children)).flat(10)
 }
 
-function generateSidebar () {
+function _generateSidebar () {
   const items = getItems()
   let i = 1
   for (const item of items) {
@@ -248,11 +260,15 @@ function generateSidebar () {
     item.title = `${i++}. ${item.title}`
   }
   return {
-    '/engineering/': sidebar
+    '/engineering/': [
+      ['', '开篇词'],
+      ...sidebar
+    ]
   }
 }
 
 module.exports = {
+  sidebar,
   getItems,
-  generateSidebar
+  generateSidebar: once(_generateSidebar)
 }

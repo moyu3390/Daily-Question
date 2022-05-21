@@ -2,7 +2,7 @@
 
 + [山月的博客点击这里](https://github.com/shfshanyue/blog)
 + [一日一题官方网站点击这里](https://q.shanyue.tech)
-+ [一日一题 bilibili 讲解点击这里](https://account.bilibili.com/account/home)，每天晚上九点十分B站直播讲解面试题。
++ [一日一题 bilibili 讲解点击这里](https://space.bilibili.com/28696526)，每天晚上九点十分B站直播讲解面试题。
 
 > 勤学如春起之苗，不见其增，日有所长；辍学如磨刀之石，不见其损，日有所亏。
 
@@ -20,6 +20,7 @@
 1. [React.memo 和记忆化数据](https://codesandbox.io/s/reactmemo-and-memo-1dt59)
 1. [React.memo 和 React.useMemo 优化性能](https://codesandbox.io/s/reactmemo-and-reactusememo-79txp)
 1. [React.memo 和 React.useCallback 优化性能](https://codesandbox.io/s/reactusecallback-and-perf-d3k6s)
+1. [React useEffect cleanup](https://codesandbox.io/s/useeffect-clean-i2fi3?file=/src/App.js)。在这段代码中，示例演示 cleanup 的时机
 1. [React 中可以以数组的 index 作为 key 吗?](https://codesandbox.io/s/react-key-shuzudeindex-nl47k)。在这段代码中，使用 index 作为 key，其中夹杂了 input，引发 bug
 1. [React 中以数组的 index 作为 key](https://codesandbox.io/s/index-as-key-yichangshili-pfmpk)。在这段代码中，使用 index 作为 key，其中夹杂了随机数，引发了 bug
 1. [React 兄弟组件通信](https://codesandbox.io/s/react-xiongdizujiantongxin-f2jf6)。兄弟组件在 React 中如何通信
@@ -38,6 +39,10 @@
 ## Codepen 示例集
 
 + [前端大厂面试指南](https://codepen.io/collection/MggMed?grid_type=list)
+
+## 特别赞助
+
+[**Apifox: API 文档、API 调试、API Mock、API 自动化测试**](https://www.apifox.cn?utm_source=shanyue-question)
 
 ## 大厂内推
 
